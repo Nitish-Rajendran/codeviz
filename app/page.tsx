@@ -100,6 +100,11 @@ print(f"Factorial of 5 is {result}")
     }
   }, [])
 
+  const handleAnalyzeCode = () => {
+    // Store current code before navigation
+    localStorage.setItem('currentCode', code)
+  }
+
   return (
     <div className="container mx-auto p-4 h-screen flex flex-col">
       <div className="flex items-center justify-between mb-4">
@@ -236,7 +241,7 @@ print(f"Factorial of 5 is {result}")
           Step {executionTrace.length > 0 ? currentStep + 1 : 0} of {executionTrace.length}
         </div>
       </div>
-      <AnalysisButton />
+      <AnalysisButton onClick={handleAnalyzeCode} />
     </div>
   )
 }

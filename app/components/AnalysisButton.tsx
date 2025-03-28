@@ -2,10 +2,17 @@
 import { LightBulbIcon } from '@heroicons/react/24/outline'
 import { useRouter } from 'next/navigation'
 
-export default function AnalysisButton() {
+interface AnalysisButtonProps {
+  onClick?: () => void
+}
+
+export default function AnalysisButton({ onClick }: AnalysisButtonProps) {
   const router = useRouter()
 
   const handleClick = () => {
+    if (onClick) {
+      onClick()
+    }
     router.push('/code-analysis')
   }
 
