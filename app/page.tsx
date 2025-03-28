@@ -13,6 +13,7 @@ import { SettingsDialog } from "@/components/settings-dialog"
 import { AIInsights } from "@/components/ai-insights"
 import { ExecutionStep } from "@/lib/ai-service"
 import { ClientOnly } from "@/components/client-only"
+import AnalysisButton from './components/AnalysisButton'
 
 export default function CodeVisualizerApp() {
   const [code, setCode] = useState(`# Example Python code
@@ -89,6 +90,15 @@ print(f"Factorial of 5 is {result}")
       }
     }
   }, [isPlaying, playbackSpeed, executionTrace.length])
+
+  useEffect(() => {
+    // Check for selected code from analysis page
+    const selectedCode = localStorage.getItem('selectedCode')
+    if (selectedCode) {
+      setCode(selectedCode)
+      localStorage.removeItem('selectedCode') // Clear the stored code
+    }
+  }, [])
 
   return (
     <div className="container mx-auto p-4 h-screen flex flex-col">
@@ -226,6 +236,7 @@ print(f"Factorial of 5 is {result}")
           Step {executionTrace.length > 0 ? currentStep + 1 : 0} of {executionTrace.length}
         </div>
       </div>
+      <AnalysisButton />
     </div>
   )
 }
