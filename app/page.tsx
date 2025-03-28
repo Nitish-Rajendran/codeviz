@@ -13,6 +13,7 @@ import { SettingsDialog } from "@/components/settings-dialog"
 import { AIInsights } from "@/components/ai-insights"
 import { ExecutionStep } from "@/lib/ai-service"
 import { ClientOnly } from "@/components/client-only"
+import AnalysisButton from "./components/AnalysisButton"
 
 export default function CodeVisualizerApp() {
   const [code, setCode] = useState(`# Example Python code
@@ -94,9 +95,14 @@ print(f"Factorial of 5 is {result}")
     <div className="container mx-auto p-4 h-screen flex flex-col">
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Code Execution Visualizer</h1>
-        <ClientOnly>
-          <SettingsDialog />
-        </ClientOnly>
+        <div className="flex items-center gap-4">
+          <ClientOnly>
+            <AnalysisButton code={code} />
+          </ClientOnly>
+          <ClientOnly>
+            <SettingsDialog />
+          </ClientOnly>
+        </div>
       </div>
 
       <div className="flex items-center gap-4 mb-4">
