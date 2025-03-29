@@ -73,7 +73,7 @@ pnpm start
 
 ## Demo Video
 
-[Watch Demo Video](https://www.youtube.com/watch?v=your-video-id)
+[Watch Demo Video](https://github.com/Nitish-Rajendran/codeviz/blob/master/Demo.mp4)
 
 ## License
 
