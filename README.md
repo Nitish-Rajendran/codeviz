@@ -1,6 +1,6 @@
 # CodeViz
 
-CodeViz is a web application for visualizing and understanding code structures. It provides an interactive interface for exploring and analyzing code, making it easier to comprehend complex codebases.
+CodeViz is a web application for visualizing and debugging code structures. It provides an interactive interface for exploring and analyzing code, making it easier to comprehend complex codebases.
 
 ## Features
 
